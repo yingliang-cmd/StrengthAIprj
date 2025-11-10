@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-// 由於 Tailwind 在 App.jsx 中是以 CDN 方式引入，這裡不需要引入 CSS
-// 如果使用標準 Tailwind 設置，則會在這裡引入 `./index.css`
+// 必須引入 Tailwind 基礎 CSS 檔案，Vite 才能處理樣式
+import './index.css'; 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

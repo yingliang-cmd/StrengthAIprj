@@ -505,52 +505,9 @@ export default function App() {
 
     const progress = (currentPageIndex / (SECTIONS.length - 1)) * 100;
     
-    // 雖然 Vite setup 已經處理了 CSS，但為了確保這些特定的 custom style 仍在，我們將其放在 style 標籤內
+    // 移除不必要的 <style> 標籤，因為樣式現在透過打包工具處理
     return (
         <>
-            {/* 這裡使用一個 style 標籤來包含原版 HTML 中的自定義 CSS，以保證 textarea 的樣式和字體 */}
-            <style>
-                {`
-                    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-                    body {
-                        font-family: 'Inter', sans-serif;
-                        background-color: #f4f4f5; /* 輕微的灰色背景 */
-                    }
-                    /* 自定義捲軸樣式 (僅適用於 Webkit 瀏覽器) */
-                    textarea::-webkit-scrollbar {
-                        width: 8px;
-                    }
-                    textarea::-webkit-scrollbar-thumb {
-                        background-color: #cbd5e1; /* 灰藍色滑塊 */
-                        border-radius: 4px;
-                    }
-                    textarea::-webkit-scrollbar-track {
-                        background-color: #f1f5f9; /* 淺色軌道 */
-                    }
-                    /* 強制 textarea 保持一致的字體和行高 */
-                    textarea {
-                        line-height: 1.5;
-                        font-size: 1rem;
-                        resize: none;
-                        overflow: hidden; /* 預設隱藏捲軸，由 JS 控制高度 */
-                        min-height: 48px; /* 簡答框最小高度 (單行) */
-                        transition: all 0.1s ease-out; /* 平滑過渡 */
-                    }
-                    /* 隱藏未選擇頁面的內容 (在 React 中不使用，但保留原始定義) */
-                    .page-content:not(.active) {
-                        display: block; /* 讓 React 處理顯示/隱藏 */
-                    }
-                    /* 隱藏 Tabs 的捲軸 */
-                    #step-tabs::-webkit-scrollbar {
-                        display: none;
-                    }
-                    #step-tabs {
-                        -ms-overflow-style: none;
-                        scrollbar-width: none;
-                    }
-                `}
-            </style>
-            
             <div role="status" aria-live="polite" className="sr-only"></div>
 
             <div className="min-h-screen flex flex-col antialiased">

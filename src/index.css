@@ -1,0 +1,16 @@
+/* Tailwind CSS 基礎層 */
+@tailwind base;
+
+/* Tailwind CSS 組件層 */
+@tailwind components;
+
+/* Tailwind CSS 實用工具層 */
+@tailwind utilities;
+
+/* 定義字體，確保中文字體也能正常顯示 */
+@layer base {
+  body {
+    font-family: 'Inter', 'Noto Sans TC', sans-serif;
+    background-color: #f4f4f5;
+  }
+}
