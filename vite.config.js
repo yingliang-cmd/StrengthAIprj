@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// 請將 'YOUR_REPO_NAME' 替換為您的 GitHub 儲存庫名稱
-// 例如：如果您的 repo URL 是 https://github.com/username/my-ikigai-app
-// 則 base 應設為 '/my-ikigai-app/'
+// 修正：將專案名稱 'StrengthAIprj' 用單引號包裹，使其成為一個字串。
+// 這是部署到 GitHub Pages 的關鍵設定。
 const REPO_NAME = 'StrengthAIprj'; 
 
 export default defineConfig({
   plugins: [react()],
-  base: `/${StrengthAIprj}/`, // 這是部署到 GitHub Pages 的關鍵設定
+  // Vite 將使用這個 base 路徑來處理所有資產 (asset) 引用
+  base: `/${REPO_NAME}/`, 
 })
