@@ -7,5 +7,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // Vite 將使用 './' 作為基礎路徑，確保資產（如 JS/CSS）能從相對位置正確載入。
-  base: './', 
+  base: '/StrengthAIprj/', 
 })
