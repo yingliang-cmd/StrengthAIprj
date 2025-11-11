@@ -1,10 +1,45 @@
+/* ---- Tailwind directives ---- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ---- Base：全站字體/背景 ---- */
 @layer base {
+  :root {
+    --main-color: #166B6C;
+  }
+
   body {
-    font-family: 'Inter', 'Noto Sans TC', sans-serif;
-    background-color: #f4f4f5;
+    @apply bg-zinc-100; /* 等同 #f4f4f5 */
+    font-family: 'Noto Sans TC', 'Inter', sans-serif;
+  }
+}
+
+/* ---- Utilities：把你原本的客製 class 搬過來 ---- */
+@layer utilities {
+  .text-main { color: var(--main-color); }
+  .bg-main { background-color: var(--main-color); }
+  .border-main { border-color: var(--main-color); }
+
+  /* 陰影 */
+  .shadow-soft { box-shadow: 0 4px 10px rgba(22, 107, 108, 0.2); }
+  .shadow-card { box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06); }
+
+  /* 輸入框效果（保留你原本的互動感） */
+  .input-style {
+    transition: all 0.2s ease-in-out;
+    border-bottom: 2px solid #ddd;
+  }
+  .input-style:focus {
+    border-bottom: 2px solid var(--main-color);
+    box-shadow: 0 1px 3px rgba(22, 107, 108, 0.5);
+    outline: none;
+  }
+
+  /* 頂部分頁 active 狀態 */
+  #nav-tabs button.active {
+    color: #ffffff;
+    background-color: var(--main-color);
+    box-shadow: 0 4px 10px rgba(22, 107, 108, 0.4);
   }
 }
